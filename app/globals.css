@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: #111318;
+  background: #fff;
+}
+
+::selection { background: #dbeafe; color: #172554; }
+
+.syn-key { color: #7c3aed; }
+.syn-string { color: #08745a; }
+
+.page-grid {
+  background-image: radial-gradient(#dfe3e8 0.65px, transparent 0.65px);
+  background-size: 18px 18px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.18), transparent 65%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
