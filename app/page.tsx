@@ -81,15 +81,15 @@ export default function Home() {
               <SectionTitle>职业经历</SectionTitle>
               <div className="space-y-0">
                 {timeline.map((item, index) => (
-                  <div key={`${item.date}-${item.title}`} className="grid grid-cols-[64px_16px_1fr] gap-2 text-xs">
-                    <time className="pt-0.5 font-mono text-[11px] text-green">{item.date}</time>
+                  <div key={`${item.date}-${item.title}`} className="grid grid-cols-[92px_16px_minmax(0,1fr)] gap-2 text-xs sm:grid-cols-[112px_16px_minmax(0,1fr)]">
+                    <time className="pt-0.5 font-mono text-[10px] leading-4 text-green sm:text-[11px]">{item.date}</time>
                     <div className="relative flex justify-center">
                       {index < timeline.length - 1 && <span className="absolute bottom-0 top-2 w-px bg-green/70" />}
                       <span className="relative mt-1 h-2 w-2 rounded-full bg-green" />
                     </div>
                     <div className="pb-5">
-                      <h3 className="font-medium text-ink">{item.title}</h3>
-                      <p className="mt-1 text-[11px] leading-4 text-slate-500">{item.description}</p>
+                      <h3 className="break-words font-medium leading-5 text-ink">{item.title}</h3>
+                      <p className="mt-1 text-[11px] leading-[1.55] text-slate-500">{item.description}</p>
                     </div>
                   </div>
                 ))}
