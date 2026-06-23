@@ -59,9 +59,9 @@ export function ProjectCard({ project }: { project: Project; index: number }) {
           ))}
         </div>
       </div>
-      <div className="flex items-center border-t border-line px-4 py-3 text-[11px] text-slate-600">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-line px-4 py-3 text-[11px] text-slate-600">
         <span>{project.role}</span>
-        <span className="ml-auto mr-6">{project.status}</span>
+        <span className="sm:ml-auto sm:mr-6">{project.status}</span>
         <a href={project.href} target="_blank" rel="noreferrer" aria-label={`打开 ${project.name}`} className="text-slate-500 transition hover:text-accent"><ExternalLink size={14} /></a>
       </div>
     </article>

@@ -21,10 +21,10 @@ export function AboutCodeCard() {
         <div className="flex gap-1.5"><i className="h-2.5 w-2.5 rounded-full bg-red-400" /><i className="h-2.5 w-2.5 rounded-full bg-amber-400" /><i className="h-2.5 w-2.5 rounded-full bg-green" /></div>
         <span className="absolute left-1/2 -translate-x-1/2 font-mono text-[11px] text-slate-400">now.json</span>
       </div>
-      <div className="overflow-x-auto px-5 py-5 font-mono text-[11px] leading-6 sm:px-6 sm:text-xs">
+      <div className="overflow-x-auto px-4 py-5 font-mono text-[10px] leading-6 sm:px-6 sm:text-xs">
         {lines.map((line, index) => (
-          <div key={index} className="flex min-w-[370px]">
-            <span className="mr-5 w-4 select-none text-right text-slate-400">{index + 1}</span>
+          <div key={index} className="flex min-w-[310px] sm:min-w-[370px]">
+            <span className="mr-3 w-4 select-none text-right text-slate-400 sm:mr-5">{index + 1}</span>
             <span className="text-slate-700">{line}</span>
           </div>
         ))}
