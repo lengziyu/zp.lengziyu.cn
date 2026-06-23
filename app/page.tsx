@@ -1,4 +1,4 @@
-import { ArrowRight, Bot, Github, MessageCircle, Send, Sparkles } from "lucide-react";
+import { ArrowRight, Bot, Github, MessageCircle, Sparkles } from "lucide-react";
 import { AboutCodeCard } from "@/components/code-card";
 import { Header } from "@/components/header";
 import { ProjectCard } from "@/components/project-card";
@@ -11,8 +11,15 @@ import { timeline } from "@/data/timeline";
 const stats = [
   { value: "10 年", label: "前端经验" },
   { value: "9", label: "个人作品" },
+  { value: "多款 APP", label: "主导上架" },
   { value: "全流程", label: "独立交付" },
-  { value: "快速", label: "离职到岗" },
+];
+
+const aiQuickLinks = [
+  { label: "查看 AI 项目", href: "#projects" },
+  { label: "了解技术栈", href: "#stack" },
+  { label: "查看工作经历", href: "#timeline" },
+  { label: "如何联系我", href: "#contact" },
 ];
 
 export default function Home() {
@@ -31,10 +38,10 @@ export default function Home() {
                 <h1 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl">你好，我是陈广达 <span aria-hidden>👋</span></h1>
               </div>
               <p className="mb-5 text-xl font-semibold leading-8 tracking-tight text-ink sm:text-2xl">
-                资深前端开发工程师<br />近期专注 AI 应用开发
+                前端开发工程师<br />近期专注前端 + AI 开发
               </p>
               <p className="max-w-lg text-sm leading-7 text-slate-600">
-                10 年前端开发经验，熟悉 Vue 2/3、React Native 与 uni-app。<br className="hidden sm:block" />能够独立完成项目从需求、开发到部署上线的全流程交付，热爱学习与持续实践。
+                10 年前端开发经验，熟悉 Vue 2/3、React Native 与 uni-app。<br className="hidden sm:block" />能够独立开发跨平台 APP，主导过多款 APP 上架，并完成项目从需求、开发到部署上线的全流程交付。
               </p>
               <p className="mt-3 font-mono text-[11px] text-slate-400">32 岁 · 男 · 大专 · 目前在职</p>
 
@@ -98,9 +105,9 @@ export default function Home() {
               <section className="rounded-xl border border-line bg-white p-5 shadow-card">
                 <h2 className="mb-4 flex items-center gap-2 font-mono text-sm font-semibold"><span className="text-green">&gt;</span> 我能做什么</h2>
                 <div className="grid gap-4 text-xs sm:grid-cols-3">
-                  <div><strong className="block text-ink">前端与跨端</strong><span className="mt-1 block leading-5 text-slate-500">Web、App、小程序多端产品开发</span></div>
+                  <div><strong className="block text-ink">前端与跨端</strong><span className="mt-1 block leading-5 text-slate-500">Web、跨平台 APP、小程序多端产品开发</span></div>
                   <div><strong className="block text-ink">AI 产品落地</strong><span className="mt-1 block leading-5 text-slate-500">把模型能力转化为可用的产品体验</span></div>
-                  <div><strong className="block text-ink">完整项目交付</strong><span className="mt-1 block leading-5 text-slate-500">技术选型、开发、部署及线上维护</span></div>
+                  <div><strong className="block text-ink">完整项目交付</strong><span className="mt-1 block leading-5 text-slate-500">技术选型、开发、部署、上架及线上维护</span></div>
                 </div>
                 <a href="#contact" className="mt-4 inline-flex items-center gap-2 text-xs text-accent"><ArrowRight size={14} /> 联系我聊聊项目</a>
               </section>
@@ -109,21 +116,52 @@ export default function Home() {
 
           <section id="contact" className="scroll-mt-28 py-8">
             <div className="rounded-xl border border-line bg-slate-50/40 p-5 shadow-card sm:p-6">
-              <div className="grid items-end gap-5 lg:grid-cols-[0.8fr_1.2fr]">
+              <div className="grid gap-5 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
                 <div>
-                  <h2 className="flex items-center gap-2 font-mono text-sm font-semibold">问问陈广达 AI <span className="rounded bg-violet-500 px-1.5 py-0.5 text-[9px] font-medium text-white">静态预览</span></h2>
-                  <p className="mt-2 text-xs text-slate-600">想了解我的项目、技能或工作经验？可以从这里开始。</p>
+                  <h2 className="flex items-center gap-2 font-mono text-sm font-semibold">
+                    Ask Lengziyu AI
+                    <span className="rounded bg-violet-500 px-1.5 py-0.5 text-[9px] font-medium text-white">即将上线</span>
+                  </h2>
+                  <p className="mt-2 max-w-md text-xs leading-6 text-slate-600">
+                    想快速了解我的项目、技能或工作经验？AI 助理即将上线，当前可以先从这些问题开始。
+                  </p>
                 </div>
-                <div className="flex gap-2">
+                <div className="space-y-3">
                   <label htmlFor="ask-ai" className="sr-only">问问陈广达 AI</label>
-                  <div className="relative flex-1">
-                    <Bot size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-                    <input id="ask-ai" readOnly placeholder="例如：你擅长哪些前端技术？" className="h-10 w-full rounded-lg border border-line bg-white pl-9 pr-3 text-xs outline-none placeholder:text-slate-400 focus:border-slate-400" />
+                  <div className="flex flex-col gap-2 sm:flex-row">
+                    <div className="relative flex-1">
+                      <Bot size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+                      <input
+                        id="ask-ai"
+                        readOnly
+                        aria-disabled="true"
+                        placeholder="例如：陈广达适合负责什么类型的前端项目？"
+                        className="h-10 w-full cursor-not-allowed rounded-lg border border-line bg-white pl-9 pr-3 text-xs outline-none placeholder:text-slate-400"
+                      />
+                    </div>
+                    <button
+                      type="button"
+                      disabled
+                      className="inline-flex h-10 items-center justify-center rounded-lg bg-ink/80 px-4 text-xs font-medium text-white disabled:cursor-not-allowed disabled:opacity-70"
+                    >
+                      即将上线
+                    </button>
                   </div>
-                  <button type="button" className="inline-flex h-10 items-center gap-2 rounded-lg bg-ink px-4 text-xs font-medium text-white hover:bg-slate-800">发送 <Send size={14} /></button>
+                  <div className="flex flex-wrap gap-2">
+                    {aiQuickLinks.map((item) => (
+                      <a
+                        key={item.href}
+                        href={item.href}
+                        className="inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-3 py-1.5 text-[11px] font-medium text-slate-600 transition-colors hover:border-blue-200 hover:bg-blue-50 hover:text-accent"
+                      >
+                        <Sparkles size={11} className="text-accent" />
+                        {item.label}
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </div>
-              <p className="mt-5 text-[10px] text-slate-400">AI 回答基于我的项目和公开信息，可能含有不准确，仅供参考。</p>
+              <p className="mt-5 text-[10px] text-slate-400">当前为静态预览，不会发送消息；后续可接入基于个人作品与简历信息的问答能力。</p>
             </div>
           </section>
 

@@ -1,7 +1,7 @@
 export function StackCode() {
   const rows = [
     ["前端", '["Vue 2", "Vue 3", "JavaScript", "TypeScript"]'],
-    ["跨端", '["React Native", "uni-app", "H5", "小程序"]'],
+    ["跨端", '["React Native", "uni-app", "H5", "小程序", "App 上架"]'],
     ["AI 开发", '["OpenAI API", "Prompt Engineering", "AI Coding"]'],
     ["工程能力", '["项目架构", "性能优化", "部署上线", "运维"]'],
     ["工作方式", '["独立交付", "持续学习", "产品思维"]'],
