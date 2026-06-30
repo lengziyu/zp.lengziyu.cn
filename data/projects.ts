@@ -4,7 +4,7 @@ export type Project = {
   tags: string[];
   role: string;
   status: string;
-  icon: "price" | "toolbox" | "resume" | "navigation" | "environment" | "trending" | "voice" | "pageforge" | "kintrace";
+  icon: "price" | "toolbox" | "resume" | "card" | "navigation" | "environment" | "trending" | "voice" | "pageforge" | "kintrace";
   href: string;
 };
 
@@ -35,6 +35,15 @@ export const projects: Project[] = [
     status: "已上线",
     icon: "resume",
     href: "https://cv.lengziyu.cn",
+  },
+  {
+    name: "集卡",
+    description: "在线卡片收集与展示工具，支持以清晰的方式整理和呈现卡片内容。",
+    tags: ["Vue 3", "卡片展示", "工具站"],
+    role: "独立开发",
+    status: "已上线",
+    icon: "card",
+    href: "https://card.lengziyu.cn",
   },
   {
     name: "AI 前沿导航",

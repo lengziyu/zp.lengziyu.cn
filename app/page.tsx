@@ -10,7 +10,7 @@ import { timeline } from "@/data/timeline";
 
 const stats = [
   { value: "10 年", label: "前端经验" },
-  { value: "9", label: "个人作品" },
+  { value: "10", label: "个人作品" },
   { value: "多款 APP", label: "主导上架" },
   { value: "全流程", label: "独立交付" },
 ];
